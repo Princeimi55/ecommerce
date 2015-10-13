@@ -285,7 +285,7 @@ SERVER | UNEXPECTED | An unexpected error occurred on the server and the request
 SERVER | UNAVAILABLE | The server is currently unavailable for tokenizing payment information.
 SERVER | UNAUTHORIZED | The server rejected the Web API key supplied.
 SERVER | PAYMENT_NOT_SUPPORTED | The payment method is not supported by the merchant.
-SERVER_REQUIRED | <data-cyan> | The server did not receive a field which is required to create a single-use token.<br><br>This should not occur under normal circumstances, as all required fields are validated in the JavaScript library.
+SERVER_REQUIRED | {data-cayan-element} | The server did not receive a field which is required to create a single-use token.<br><br>This should not occur under normal circumstances, as all required fields are validated in the JavaScript library.
 SERVER_VALIDATION | {data-cayan-element} | The server received a field which failed validation.<br><br>This should not occur under normal circumstances, as all required fields are validated in the JavaScript library.
 
 #Supported Data-Cayan Form Elements
