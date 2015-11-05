@@ -9,7 +9,7 @@
         
     <script src="http://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="https://ps1.merchantware.net/ecommerce/scripts/cayan-0.1.0.js" type="text/javascript"></script>
+    <script src="https://ecommerce.merchantware.net/v1/CayanCheckout.js" type="text/javascript"></script>
 </head>
 <body>
 	<div class="container">
@@ -117,7 +117,7 @@
 
 </body>
 <script>
-    Cayan.setWebApiKey("pstest;22222222;22222-22222-22222-22222-22222");
+    CayanCheckout.setWebApiKey("8Z0E5CGYTMDJIRK7");
 
     function clearTokenMessageContainer(tokenMessageContainer) {
         tokenMessageContainer.removeClass('alert-danger');
@@ -153,7 +153,7 @@
 
     $("#SubmitButton").click(function (ev) {
         toggleForm();
-        Cayan.createPaymentToken({
+        CayanCheckout.createPaymentToken({
             success: HandleTokenResponse,
             error: HandleErrorResponse
         });
