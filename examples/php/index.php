@@ -155,7 +155,7 @@
     
 <script>
     // set credentials to enable use of the API.
-    CayanCheckout.setWebApiKey("8Z0E5CGYTMDJIRK7");
+    CayanCheckout.setWebApiKey("X84CREN7CCQDA3FS");
 
     function clearTokenMessageContainer(tokenMessageContainer) {
         tokenMessageContainer.removeClass('alert-danger');
