@@ -83,19 +83,16 @@ As you can see on this form, we have four required elements.  The card number, t
 Next, you will need to include a reference to the JavaScript library.
 
 ```html
-<script type="text/javascript" src="https://ps1.merchantware.net/ecommerce/scripts/cayan-0.1.0.js"></script>
+<script type="text/javascript" src="https://ecommerce.merchantware.net/v1/CayanCheckout.js"></script>
 ```
-> Currently, the script is available underneath the `ps1.merchantware.net` domain, but the final version may be found at a different URL.
 
-Finally, you need to set the Web API key for the merchant account you wish to use for processing.  This is done by calling the `Cayan.setWebApiKey()` JavaScript method. Each merchant account will have a unique key which serves as a very limited set of credentials.  The key can only be used to turn payment information into a single-use token, and can never be used for any other purpose.  You can obtain a Web API key by contacting our technical support staff.  This should be placed within a separate script block.
+Finally, you need to set the Web API key for the merchant account you wish to use for processing.  This is done by calling the `CayanCheckout.setWebApiKey()` JavaScript method. Each merchant account will have a unique key which serves as a very limited set of credentials.  The key can only be used to turn payment information into a single-use token, and can never be used for any other purpose.  You can obtain a Web API key by contacting our technical support staff.  This should be placed within a separate script block.
 
 ```
 <script type="text/javascript">
-   Cayan.setWebApiKey("PSTest;22222222;22222-22222-22222-22222-22222");
+   CayanCheckout.setWebApiKey("ABCDEF0123456789");
 </script>
 ```
-
-> For the moment, we are still in the process of building the authentication process.  For the interim time, please use the Merchantware credentials supplied to you in the form of `<NAME>;<SITE_ID>;<MERCHANT_KEY>`.  **DO NOT** use this with live credentials at any time as it may expose you to risk.
 
 ##Creating a Single-Use Token
 
@@ -109,7 +106,7 @@ $(document).ready(function () {
         $(this).prop('disabled', true);
 
         // Create the payment token
-        Cayan.createPaymentToken({
+        CayanCheckout.createPaymentToken({
             success: successCallback,
             error: failureCallback
         })
@@ -118,7 +115,7 @@ $(document).ready(function () {
 });
 ```
 
-When `submitButton` is clicked by the user, the button is first disabled to prevent them from submitting multiple times.  Then the `Cayan.createPaymentToken()` function is called.
+When `submitButton` is clicked by the user, the button is first disabled to prevent them from submitting multiple times.  Then the `CayanCheckout.createPaymentToken()` function is called.
 
 The function takes an object with two fields, `success` and `error`, which are callbacks that handle the responses from the JavaScript library. 
 
@@ -126,7 +123,7 @@ The success callback receives an object containing information about the token t
 
 ```
 {
-   token: "ECTDLT1KSFBNOZB381037S",
+   token: "OTT_LT1KSFBNOZB381037S",
    created: " 2015-09-02T00:08:38.8686925Z",
    expires: " 2015-09-02T00:10:38.8686925Z"
 }
@@ -190,7 +187,7 @@ https://ps1.merchantware.net/merchantware/documentation40/standard/credit_PreAut
 
 ##Functions
 
-###Cayan.setWebApiKey(apiKey)
+###CayanCheckout.setWebApiKey(apiKey)
 This function is used to set the merchant account used to tokenize the payment information.
 
 Parameter | Type | Description
@@ -200,10 +197,10 @@ apiKey | String | A string containing the Web API key used to identify the merch
 Example:
 
 ```javascript
-Cayan.setWebApiKey("PSTest;22222222;22222-22222-22222-22222-22222");
+CayanCheckout.setWebApiKey("ABCDEF0123456789");
 ```
 
-###Cayan.createPaymentToken(handlers)
+###CayanCheckout.createPaymentToken(handlers)
 This function is used to create a single-use token from the payment information on the current HTML page.
 
 Parameter | Type | Description
@@ -223,7 +220,7 @@ Cayan.createPaymentToken({
 
 ###Handlers
 
-A set of key/value pairs used to configure the behavior for the `Cayan.createPaymentToken()` function.  Both the `success` and the `error` functions are required.
+A set of key/value pairs used to configure the behavior for the `CayanCheckout.createPaymentToken()` function.  Both the `success` and the `error` functions are required.
 
 Field | Type | Description
 ----- | ---- | -----------
@@ -231,7 +228,7 @@ success | Function | Function (TokenResponse data)<br><br>A function that is cal
 error | Function | Function (ErrorResponse[] error)<br><br>A function that is called when there was an error creating the single-use token from the payment data.  The error response contains a list of error codes and responses related to that error code.<br><br>This is a required field.
 
 ###TokenResponse
-The token response object is returned by the `success` callback of the `Cayan.createPaymentToken()` method.
+The token response object is returned by the `success` callback of the `CayanCheckout.createPaymentToken()` method.
 
 Field | Type | Description
 ----- | ---- | -----------
@@ -243,7 +240,7 @@ Example:
 
 ```
 {
-   token: "ECTDLT1KSFBNOZB381037S",
+   token: "OTT_LT1KSFBNOZB381037S",
    created: " 2015-09-02T00:08:38.8686925Z",
    expires: " 2015-09-02T00:10:38.8686925Z"
 }
@@ -251,7 +248,7 @@ Example:
 
 ###ErrorResponse
 
-The error response object is returned by the `error` callback of the `Cayan.createPaymentToken()` method.
+The error response object is returned by the `error` callback of the `CayanCheckout.createPaymentToken()` method.
 
 Field | Type | Description
 ----- | ---- | -----------
@@ -299,5 +296,3 @@ expirationyear | Yes | The two-digit expiration year.
 cvv | Yes | The three or four digit CVV/CVC code on the card.
 streetaddress | No | The street address for the card used for AVS checks.
 zipcode | No | The zip code associated with the card used for AVS checks.
-
-
