@@ -162,9 +162,9 @@ var client = new CreditSoapClient();
             
 // Perform a sale using the single-use token stored in the Vault
 var result = client.SaleVault(
-    merchantName: "pstest",
-    merchantSiteId: "22222222",
-    merchantKey: "22222-22222-22222-22222-22222",
+    merchantName: "TEST",
+    merchantSiteId: "XXXXXXXX",
+    merchantKey: "XXXXX-XXXXX-XXXXX-XXXXX-XXXXX",
     invoiceNumber: "",
     amount: "1.35",
     vaultToken: singleUseToken,
