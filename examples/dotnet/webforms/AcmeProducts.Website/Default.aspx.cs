@@ -23,9 +23,9 @@
             using (var service = new CreditSoapClient())
             {
                 var response = service.SaleVault(
-                    merchantName: "pstest",
-                    merchantSiteId: "22222222",
-                    merchantKey: "22222-22222-22222-22222-22222",
+                    merchantName: "TEST",
+                    merchantSiteId: "XXXXXXXX",
+                    merchantKey: "XXXXX-XXXXX-XXXXX-XXXXX-XXXXX",
                     invoiceNumber: "123",
                     amount: this.Amount,
                     vaultToken: token,
