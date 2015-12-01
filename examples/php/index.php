@@ -12,9 +12,9 @@
 
 		$response = $client->SaleVault(
 			array(
-				'merchantName'           => 'pstest',
-				'merchantSiteId'         => '22222222',
-				'merchantKey'            => '22222-22222-22222-22222-22222',
+				'merchantName'           => 'TEST',
+				'merchantSiteId'         => 'XXXXXXXX',
+				'merchantKey'            => 'XXXXX-XXXXX-XXXXX-XXXXX-XXXXX',
 				'invoiceNumber'          => '123',
 				'amount'                 => $amount,
 				'vaultToken'             => $token,
