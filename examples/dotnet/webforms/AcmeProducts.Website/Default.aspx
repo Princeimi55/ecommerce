@@ -117,7 +117,7 @@
 
 </body>
 <script>
-    CayanCheckout.setWebApiKey("X84CREN7CCQDA3FS");
+    CayanCheckout.setWebApiKey("ABCDEF0123456789");
 
     function clearTokenMessageContainer(tokenMessageContainer) {
         tokenMessageContainer.removeClass('alert-danger');
