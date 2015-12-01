@@ -45,9 +45,9 @@ public class HomeController {
   @RequestMapping(value = "/", method = RequestMethod.POST)
   public String homePost(final @RequestParam("TokenHolder") String token, final Locale locale, final Model model) {
 
-    String merchantName = "pstest";
-    String merchantSiteId = "22222222";
-    String merchantKey = "22222-22222-22222-22222-22222";
+    String merchantName = "TEST";
+    String merchantSiteId = "XXXXXXXX";
+    String merchantKey = "XXXXX-XXXXX-XXXXX-XXXXX-XXXXX";
     String invoiceNumber = "99123";
     String amount = "1.65";
     String vaultToken = token;
