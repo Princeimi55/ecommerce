@@ -1,0 +1,2254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.merchantwarehouse.com/merchantware/40/Credit/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://schemas.merchantwarehouse.com/merchantware/40/Credit/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provides payment, processing, and related services for both credit and debit cards.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.merchantwarehouse.com/merchantware/40/Credit/">
+      <s:element name="ApplyTip">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipAmount" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ApplyTipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ApplyTipResult" type="tns:CreditResponse4" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreditResponse4">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthorizationCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AvsResponse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cardholder" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CardType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CvResponse" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EntryMode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExtraData" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InvoiceNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransactionType" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CaptureSignatureTiff">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imageData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CaptureSignatureTiffResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CaptureSignatureTiffResult" type="tns:SignatureResponse4" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SignatureResponse4">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SignatureType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UploadStatus" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CaptureSignatureVector">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imageData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CaptureSignatureVectorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CaptureSignatureVectorResult" type="tns:SignatureResponse4" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DebitSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="invoiceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="trackData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pinBlock" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pinKsn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="surchargeAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cashbackAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="forceDuplicate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="registerNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DebitSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DebitSaleResult" type="tns:CreditResponse4" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForceSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="invoiceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="authorizationCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="expirationDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardholder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="registerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantTransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForceSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ForceSaleResult" type="tns:CreditResponse4" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Level2Sale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="invoiceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="trackData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="poNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="taxAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="forceDuplicate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="registerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantTransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="entryMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Level2SaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Level2SaleResult" type="tns:CreditLevel2Response4" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreditLevel2Response4">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthorizationCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AvsResponse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cardholder" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CardType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CvResponse" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EntryMode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExtraData" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InvoiceNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PurchaseOrderNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransactionType" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Level2SaleKeyed">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="invoiceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="expirationDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardholder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="avsStreetAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="avsStreetZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardSecurityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="poNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="taxAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="forceDuplicate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="registerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantTransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Level2SaleKeyedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Level2SaleKeyedResult" type="tns:CreditLevel2Response4" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostAuthorization">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="invoiceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="registerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantTransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostAuthorizationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostAuthorizationResult" type="tns:CreditResponse4" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PreAuthorization">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="invoiceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="trackData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="registerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantTransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="entryMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PreAuthorizationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PreAuthorizationResult" type="tns:CreditResponse4" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PreAuthorizationKeyed">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="invoiceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="expirationDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardholder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="avsStreetAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="avsStreetZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardSecurityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="registerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantTransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PreAuthorizationKeyedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PreAuthorizationKeyedResult" type="tns:CreditResponse4" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Refund">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="invoiceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="overrideAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="registerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantTransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RefundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RefundResult" type="tns:CreditResponse4" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RepeatSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="invoiceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="overrideAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="expirationDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="avsStreetAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="avsStreetZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="registerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantTransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RepeatSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RepeatSaleResult" type="tns:CreditResponse4" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="invoiceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="trackData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="forceDuplicate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="registerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantTransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="entryMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaleResult" type="tns:CreditResponse4" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaleKeyed">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="invoiceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="expirationDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardholder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="avsStreetAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="avsStreetZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardSecurityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="forceDuplicate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="registerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantTransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaleKeyedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaleKeyedResult" type="tns:CreditResponse4" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SettleBatch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SettleBatchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SettleBatchResult" type="tns:BatchResponse4" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BatchResponse4">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AuthorizationCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BatchAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BatchStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExtraData" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransactionCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionDate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="VoidPreAuthorization">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="registerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantTransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VoidPreAuthorizationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VoidPreAuthorizationResult" type="tns:CreditResponse4" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Void">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="registerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantTransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VoidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VoidResult" type="tns:CreditResponse4" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Level2SaleVault">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="invoiceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vaultToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="poNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="taxAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="forceDuplicate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="registerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantTransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Level2SaleVaultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Level2SaleVaultResult" type="tns:CreditLevel2Response4" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PreAuthorizationVault">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="invoiceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vaultToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="registerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantTransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PreAuthorizationVaultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PreAuthorizationVaultResult" type="tns:CreditResponse4" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaleVault">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="invoiceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vaultToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="forceDuplicate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="registerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantTransactionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaleVaultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaleVaultResult" type="tns:CreditResponse4" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VaultBoardCredit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantDefinedToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="trackData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="avsStreetAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="avsStreetZipCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VaultBoardCreditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VaultBoardCreditResult" type="tns:VaultBoardingResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VaultBoardingResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VaultToken" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="VaultBoardCreditKeyed">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantDefinedToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="expirationDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardholder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="avsStreetAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="avsStreetZipCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VaultBoardCreditKeyedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VaultBoardCreditKeyedResult" type="tns:VaultBoardingResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VaultBoardCreditByReference">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantDefinedToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="referenceNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VaultBoardCreditByReferenceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VaultBoardCreditByReferenceResult" type="tns:VaultBoardingResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VaultDeleteToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vaultToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VaultDeleteTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VaultDeleteTokenResult" type="tns:VaultBoardingResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VaultFindPaymentInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vaultToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VaultFindPaymentInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VaultFindPaymentInfoResult" type="tns:VaultPaymentInfoResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VaultPaymentInfoResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AvsStreetAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AvsZipCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cardholder" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExpirationDate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EmvAuthorize">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="invoiceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="poNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="taxAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="registerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantTransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="entryMode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageCorrelationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardAcceptorTerminalID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pinBlock" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pinKsn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cashbackAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="donationAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userTipAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="surchargeAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="kernelSoftwareVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tlvData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="transactionType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmvAuthorizeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmvAuthorizeResult" type="tns:EmvAuthorizeResponse4" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EmvAuthorizeResponse4">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ApprovalStatus" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AmountApproved" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthorizationCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TlvData" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CashbackAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DonationAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserTipAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SurchargeAmount" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EmvComplete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantSiteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="invoiceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="poNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="taxAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="registerNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="merchantTransactionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="entryMode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageCorrelationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardAcceptorTerminalID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pinBlock" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pinKsn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cashbackAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="donationAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userTipAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="surchargeAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="kernelSoftwareVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tlvData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="transactionType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmvCompleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmvCompleteResult" type="tns:EmvCompleteResponse4" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EmvCompleteResponse4">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Status" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreditResponse4" nillable="true" type="tns:CreditResponse4" />
+      <s:element name="SignatureResponse4" nillable="true" type="tns:SignatureResponse4" />
+      <s:element name="CreditLevel2Response4" nillable="true" type="tns:CreditLevel2Response4" />
+      <s:element name="BatchResponse4" nillable="true" type="tns:BatchResponse4" />
+      <s:element name="VaultBoardingResponse" nillable="true" type="tns:VaultBoardingResponse" />
+      <s:element name="VaultPaymentInfoResponse" nillable="true" type="tns:VaultPaymentInfoResponse" />
+      <s:element name="EmvAuthorizeResponse4" nillable="true" type="tns:EmvAuthorizeResponse4" />
+      <s:element name="EmvCompleteResponse4" nillable="true" type="tns:EmvCompleteResponse4" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ApplyTipSoapIn">
+    <wsdl:part name="parameters" element="tns:ApplyTip" />
+  </wsdl:message>
+  <wsdl:message name="ApplyTipSoapOut">
+    <wsdl:part name="parameters" element="tns:ApplyTipResponse" />
+  </wsdl:message>
+  <wsdl:message name="CaptureSignatureTiffSoapIn">
+    <wsdl:part name="parameters" element="tns:CaptureSignatureTiff" />
+  </wsdl:message>
+  <wsdl:message name="CaptureSignatureTiffSoapOut">
+    <wsdl:part name="parameters" element="tns:CaptureSignatureTiffResponse" />
+  </wsdl:message>
+  <wsdl:message name="CaptureSignatureVectorSoapIn">
+    <wsdl:part name="parameters" element="tns:CaptureSignatureVector" />
+  </wsdl:message>
+  <wsdl:message name="CaptureSignatureVectorSoapOut">
+    <wsdl:part name="parameters" element="tns:CaptureSignatureVectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="DebitSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:DebitSale" />
+  </wsdl:message>
+  <wsdl:message name="DebitSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:DebitSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForceSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:ForceSale" />
+  </wsdl:message>
+  <wsdl:message name="ForceSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:ForceSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="Level2SaleSoapIn">
+    <wsdl:part name="parameters" element="tns:Level2Sale" />
+  </wsdl:message>
+  <wsdl:message name="Level2SaleSoapOut">
+    <wsdl:part name="parameters" element="tns:Level2SaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="Level2SaleKeyedSoapIn">
+    <wsdl:part name="parameters" element="tns:Level2SaleKeyed" />
+  </wsdl:message>
+  <wsdl:message name="Level2SaleKeyedSoapOut">
+    <wsdl:part name="parameters" element="tns:Level2SaleKeyedResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostAuthorizationSoapIn">
+    <wsdl:part name="parameters" element="tns:PostAuthorization" />
+  </wsdl:message>
+  <wsdl:message name="PostAuthorizationSoapOut">
+    <wsdl:part name="parameters" element="tns:PostAuthorizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="PreAuthorizationSoapIn">
+    <wsdl:part name="parameters" element="tns:PreAuthorization" />
+  </wsdl:message>
+  <wsdl:message name="PreAuthorizationSoapOut">
+    <wsdl:part name="parameters" element="tns:PreAuthorizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="PreAuthorizationKeyedSoapIn">
+    <wsdl:part name="parameters" element="tns:PreAuthorizationKeyed" />
+  </wsdl:message>
+  <wsdl:message name="PreAuthorizationKeyedSoapOut">
+    <wsdl:part name="parameters" element="tns:PreAuthorizationKeyedResponse" />
+  </wsdl:message>
+  <wsdl:message name="RefundSoapIn">
+    <wsdl:part name="parameters" element="tns:Refund" />
+  </wsdl:message>
+  <wsdl:message name="RefundSoapOut">
+    <wsdl:part name="parameters" element="tns:RefundResponse" />
+  </wsdl:message>
+  <wsdl:message name="RepeatSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:RepeatSale" />
+  </wsdl:message>
+  <wsdl:message name="RepeatSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:RepeatSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaleSoapIn">
+    <wsdl:part name="parameters" element="tns:Sale" />
+  </wsdl:message>
+  <wsdl:message name="SaleSoapOut">
+    <wsdl:part name="parameters" element="tns:SaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaleKeyedSoapIn">
+    <wsdl:part name="parameters" element="tns:SaleKeyed" />
+  </wsdl:message>
+  <wsdl:message name="SaleKeyedSoapOut">
+    <wsdl:part name="parameters" element="tns:SaleKeyedResponse" />
+  </wsdl:message>
+  <wsdl:message name="SettleBatchSoapIn">
+    <wsdl:part name="parameters" element="tns:SettleBatch" />
+  </wsdl:message>
+  <wsdl:message name="SettleBatchSoapOut">
+    <wsdl:part name="parameters" element="tns:SettleBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="VoidPreAuthorizationSoapIn">
+    <wsdl:part name="parameters" element="tns:VoidPreAuthorization" />
+  </wsdl:message>
+  <wsdl:message name="VoidPreAuthorizationSoapOut">
+    <wsdl:part name="parameters" element="tns:VoidPreAuthorizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="VoidSoapIn">
+    <wsdl:part name="parameters" element="tns:Void" />
+  </wsdl:message>
+  <wsdl:message name="VoidSoapOut">
+    <wsdl:part name="parameters" element="tns:VoidResponse" />
+  </wsdl:message>
+  <wsdl:message name="Level2SaleVaultSoapIn">
+    <wsdl:part name="parameters" element="tns:Level2SaleVault" />
+  </wsdl:message>
+  <wsdl:message name="Level2SaleVaultSoapOut">
+    <wsdl:part name="parameters" element="tns:Level2SaleVaultResponse" />
+  </wsdl:message>
+  <wsdl:message name="PreAuthorizationVaultSoapIn">
+    <wsdl:part name="parameters" element="tns:PreAuthorizationVault" />
+  </wsdl:message>
+  <wsdl:message name="PreAuthorizationVaultSoapOut">
+    <wsdl:part name="parameters" element="tns:PreAuthorizationVaultResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaleVaultSoapIn">
+    <wsdl:part name="parameters" element="tns:SaleVault" />
+  </wsdl:message>
+  <wsdl:message name="SaleVaultSoapOut">
+    <wsdl:part name="parameters" element="tns:SaleVaultResponse" />
+  </wsdl:message>
+  <wsdl:message name="VaultBoardCreditSoapIn">
+    <wsdl:part name="parameters" element="tns:VaultBoardCredit" />
+  </wsdl:message>
+  <wsdl:message name="VaultBoardCreditSoapOut">
+    <wsdl:part name="parameters" element="tns:VaultBoardCreditResponse" />
+  </wsdl:message>
+  <wsdl:message name="VaultBoardCreditKeyedSoapIn">
+    <wsdl:part name="parameters" element="tns:VaultBoardCreditKeyed" />
+  </wsdl:message>
+  <wsdl:message name="VaultBoardCreditKeyedSoapOut">
+    <wsdl:part name="parameters" element="tns:VaultBoardCreditKeyedResponse" />
+  </wsdl:message>
+  <wsdl:message name="VaultBoardCreditByReferenceSoapIn">
+    <wsdl:part name="parameters" element="tns:VaultBoardCreditByReference" />
+  </wsdl:message>
+  <wsdl:message name="VaultBoardCreditByReferenceSoapOut">
+    <wsdl:part name="parameters" element="tns:VaultBoardCreditByReferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="VaultDeleteTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:VaultDeleteToken" />
+  </wsdl:message>
+  <wsdl:message name="VaultDeleteTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:VaultDeleteTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="VaultFindPaymentInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:VaultFindPaymentInfo" />
+  </wsdl:message>
+  <wsdl:message name="VaultFindPaymentInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:VaultFindPaymentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmvAuthorizeSoapIn">
+    <wsdl:part name="parameters" element="tns:EmvAuthorize" />
+  </wsdl:message>
+  <wsdl:message name="EmvAuthorizeSoapOut">
+    <wsdl:part name="parameters" element="tns:EmvAuthorizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmvCompleteSoapIn">
+    <wsdl:part name="parameters" element="tns:EmvComplete" />
+  </wsdl:message>
+  <wsdl:message name="EmvCompleteSoapOut">
+    <wsdl:part name="parameters" element="tns:EmvCompleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApplyTipHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="tipAmount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ApplyTipHttpPostOut">
+    <wsdl:part name="Body" element="tns:CreditResponse4" />
+  </wsdl:message>
+  <wsdl:message name="CaptureSignatureTiffHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="imageData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CaptureSignatureTiffHttpPostOut">
+    <wsdl:part name="Body" element="tns:SignatureResponse4" />
+  </wsdl:message>
+  <wsdl:message name="CaptureSignatureVectorHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="imageData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CaptureSignatureVectorHttpPostOut">
+    <wsdl:part name="Body" element="tns:SignatureResponse4" />
+  </wsdl:message>
+  <wsdl:message name="DebitSaleHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="invoiceNumber" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="trackData" type="s:string" />
+    <wsdl:part name="pinBlock" type="s:string" />
+    <wsdl:part name="pinKsn" type="s:string" />
+    <wsdl:part name="surchargeAmount" type="s:string" />
+    <wsdl:part name="cashbackAmount" type="s:string" />
+    <wsdl:part name="forceDuplicate" type="s:string" />
+    <wsdl:part name="registerNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DebitSaleHttpPostOut">
+    <wsdl:part name="Body" element="tns:CreditResponse4" />
+  </wsdl:message>
+  <wsdl:message name="ForceSaleHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="invoiceNumber" type="s:string" />
+    <wsdl:part name="authorizationCode" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="cardNumber" type="s:string" />
+    <wsdl:part name="expirationDate" type="s:string" />
+    <wsdl:part name="cardholder" type="s:string" />
+    <wsdl:part name="registerNumber" type="s:string" />
+    <wsdl:part name="merchantTransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ForceSaleHttpPostOut">
+    <wsdl:part name="Body" element="tns:CreditResponse4" />
+  </wsdl:message>
+  <wsdl:message name="Level2SaleHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="invoiceNumber" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="trackData" type="s:string" />
+    <wsdl:part name="customerCode" type="s:string" />
+    <wsdl:part name="poNumber" type="s:string" />
+    <wsdl:part name="taxAmount" type="s:string" />
+    <wsdl:part name="forceDuplicate" type="s:string" />
+    <wsdl:part name="registerNumber" type="s:string" />
+    <wsdl:part name="merchantTransactionId" type="s:string" />
+    <wsdl:part name="entryMode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Level2SaleHttpPostOut">
+    <wsdl:part name="Body" element="tns:CreditLevel2Response4" />
+  </wsdl:message>
+  <wsdl:message name="Level2SaleKeyedHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="invoiceNumber" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="cardNumber" type="s:string" />
+    <wsdl:part name="expirationDate" type="s:string" />
+    <wsdl:part name="cardholder" type="s:string" />
+    <wsdl:part name="avsStreetAddress" type="s:string" />
+    <wsdl:part name="avsStreetZipCode" type="s:string" />
+    <wsdl:part name="cardSecurityCode" type="s:string" />
+    <wsdl:part name="customerCode" type="s:string" />
+    <wsdl:part name="poNumber" type="s:string" />
+    <wsdl:part name="taxAmount" type="s:string" />
+    <wsdl:part name="forceDuplicate" type="s:string" />
+    <wsdl:part name="registerNumber" type="s:string" />
+    <wsdl:part name="merchantTransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Level2SaleKeyedHttpPostOut">
+    <wsdl:part name="Body" element="tns:CreditLevel2Response4" />
+  </wsdl:message>
+  <wsdl:message name="PostAuthorizationHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="invoiceNumber" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="registerNumber" type="s:string" />
+    <wsdl:part name="merchantTransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PostAuthorizationHttpPostOut">
+    <wsdl:part name="Body" element="tns:CreditResponse4" />
+  </wsdl:message>
+  <wsdl:message name="PreAuthorizationHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="invoiceNumber" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="trackData" type="s:string" />
+    <wsdl:part name="registerNumber" type="s:string" />
+    <wsdl:part name="merchantTransactionId" type="s:string" />
+    <wsdl:part name="entryMode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PreAuthorizationHttpPostOut">
+    <wsdl:part name="Body" element="tns:CreditResponse4" />
+  </wsdl:message>
+  <wsdl:message name="PreAuthorizationKeyedHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="invoiceNumber" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="cardNumber" type="s:string" />
+    <wsdl:part name="expirationDate" type="s:string" />
+    <wsdl:part name="cardholder" type="s:string" />
+    <wsdl:part name="avsStreetAddress" type="s:string" />
+    <wsdl:part name="avsStreetZipCode" type="s:string" />
+    <wsdl:part name="cardSecurityCode" type="s:string" />
+    <wsdl:part name="registerNumber" type="s:string" />
+    <wsdl:part name="merchantTransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PreAuthorizationKeyedHttpPostOut">
+    <wsdl:part name="Body" element="tns:CreditResponse4" />
+  </wsdl:message>
+  <wsdl:message name="RefundHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="invoiceNumber" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="overrideAmount" type="s:string" />
+    <wsdl:part name="registerNumber" type="s:string" />
+    <wsdl:part name="merchantTransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RefundHttpPostOut">
+    <wsdl:part name="Body" element="tns:CreditResponse4" />
+  </wsdl:message>
+  <wsdl:message name="RepeatSaleHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="invoiceNumber" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="overrideAmount" type="s:string" />
+    <wsdl:part name="expirationDate" type="s:string" />
+    <wsdl:part name="avsStreetAddress" type="s:string" />
+    <wsdl:part name="avsStreetZipCode" type="s:string" />
+    <wsdl:part name="registerNumber" type="s:string" />
+    <wsdl:part name="merchantTransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RepeatSaleHttpPostOut">
+    <wsdl:part name="Body" element="tns:CreditResponse4" />
+  </wsdl:message>
+  <wsdl:message name="SaleHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="invoiceNumber" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="trackData" type="s:string" />
+    <wsdl:part name="forceDuplicate" type="s:string" />
+    <wsdl:part name="registerNumber" type="s:string" />
+    <wsdl:part name="merchantTransactionId" type="s:string" />
+    <wsdl:part name="entryMode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaleHttpPostOut">
+    <wsdl:part name="Body" element="tns:CreditResponse4" />
+  </wsdl:message>
+  <wsdl:message name="SaleKeyedHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="invoiceNumber" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="cardNumber" type="s:string" />
+    <wsdl:part name="expirationDate" type="s:string" />
+    <wsdl:part name="cardholder" type="s:string" />
+    <wsdl:part name="avsStreetAddress" type="s:string" />
+    <wsdl:part name="avsStreetZipCode" type="s:string" />
+    <wsdl:part name="cardSecurityCode" type="s:string" />
+    <wsdl:part name="forceDuplicate" type="s:string" />
+    <wsdl:part name="registerNumber" type="s:string" />
+    <wsdl:part name="merchantTransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaleKeyedHttpPostOut">
+    <wsdl:part name="Body" element="tns:CreditResponse4" />
+  </wsdl:message>
+  <wsdl:message name="SettleBatchHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SettleBatchHttpPostOut">
+    <wsdl:part name="Body" element="tns:BatchResponse4" />
+  </wsdl:message>
+  <wsdl:message name="VoidPreAuthorizationHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="registerNumber" type="s:string" />
+    <wsdl:part name="merchantTransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VoidPreAuthorizationHttpPostOut">
+    <wsdl:part name="Body" element="tns:CreditResponse4" />
+  </wsdl:message>
+  <wsdl:message name="VoidHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="registerNumber" type="s:string" />
+    <wsdl:part name="merchantTransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VoidHttpPostOut">
+    <wsdl:part name="Body" element="tns:CreditResponse4" />
+  </wsdl:message>
+  <wsdl:message name="Level2SaleVaultHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="invoiceNumber" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="vaultToken" type="s:string" />
+    <wsdl:part name="customerCode" type="s:string" />
+    <wsdl:part name="poNumber" type="s:string" />
+    <wsdl:part name="taxAmount" type="s:string" />
+    <wsdl:part name="forceDuplicate" type="s:string" />
+    <wsdl:part name="registerNumber" type="s:string" />
+    <wsdl:part name="merchantTransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Level2SaleVaultHttpPostOut">
+    <wsdl:part name="Body" element="tns:CreditLevel2Response4" />
+  </wsdl:message>
+  <wsdl:message name="PreAuthorizationVaultHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="invoiceNumber" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="vaultToken" type="s:string" />
+    <wsdl:part name="registerNumber" type="s:string" />
+    <wsdl:part name="merchantTransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PreAuthorizationVaultHttpPostOut">
+    <wsdl:part name="Body" element="tns:CreditResponse4" />
+  </wsdl:message>
+  <wsdl:message name="SaleVaultHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="invoiceNumber" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="vaultToken" type="s:string" />
+    <wsdl:part name="forceDuplicate" type="s:string" />
+    <wsdl:part name="registerNumber" type="s:string" />
+    <wsdl:part name="merchantTransactionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaleVaultHttpPostOut">
+    <wsdl:part name="Body" element="tns:CreditResponse4" />
+  </wsdl:message>
+  <wsdl:message name="VaultBoardCreditHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="merchantDefinedToken" type="s:string" />
+    <wsdl:part name="trackData" type="s:string" />
+    <wsdl:part name="avsStreetAddress" type="s:string" />
+    <wsdl:part name="avsStreetZipCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VaultBoardCreditHttpPostOut">
+    <wsdl:part name="Body" element="tns:VaultBoardingResponse" />
+  </wsdl:message>
+  <wsdl:message name="VaultBoardCreditKeyedHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="merchantDefinedToken" type="s:string" />
+    <wsdl:part name="cardNumber" type="s:string" />
+    <wsdl:part name="expirationDate" type="s:string" />
+    <wsdl:part name="cardholder" type="s:string" />
+    <wsdl:part name="avsStreetAddress" type="s:string" />
+    <wsdl:part name="avsStreetZipCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VaultBoardCreditKeyedHttpPostOut">
+    <wsdl:part name="Body" element="tns:VaultBoardingResponse" />
+  </wsdl:message>
+  <wsdl:message name="VaultBoardCreditByReferenceHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="merchantDefinedToken" type="s:string" />
+    <wsdl:part name="referenceNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VaultBoardCreditByReferenceHttpPostOut">
+    <wsdl:part name="Body" element="tns:VaultBoardingResponse" />
+  </wsdl:message>
+  <wsdl:message name="VaultDeleteTokenHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="vaultToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VaultDeleteTokenHttpPostOut">
+    <wsdl:part name="Body" element="tns:VaultBoardingResponse" />
+  </wsdl:message>
+  <wsdl:message name="VaultFindPaymentInfoHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="vaultToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VaultFindPaymentInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:VaultPaymentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmvAuthorizeHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="invoiceNumber" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="customerCode" type="s:string" />
+    <wsdl:part name="poNumber" type="s:string" />
+    <wsdl:part name="taxAmount" type="s:string" />
+    <wsdl:part name="registerNumber" type="s:string" />
+    <wsdl:part name="merchantTransactionId" type="s:string" />
+    <wsdl:part name="entryMode" type="s:string" />
+    <wsdl:part name="messageCorrelationID" type="s:string" />
+    <wsdl:part name="cardAcceptorTerminalID" type="s:string" />
+    <wsdl:part name="pinBlock" type="s:string" />
+    <wsdl:part name="pinKsn" type="s:string" />
+    <wsdl:part name="cashbackAmount" type="s:string" />
+    <wsdl:part name="donationAmount" type="s:string" />
+    <wsdl:part name="userTipAmount" type="s:string" />
+    <wsdl:part name="surchargeAmount" type="s:string" />
+    <wsdl:part name="kernelSoftwareVersion" type="s:string" />
+    <wsdl:part name="tlvData" type="s:string" />
+    <wsdl:part name="transactionType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EmvAuthorizeHttpPostOut">
+    <wsdl:part name="Body" element="tns:EmvAuthorizeResponse4" />
+  </wsdl:message>
+  <wsdl:message name="EmvCompleteHttpPostIn">
+    <wsdl:part name="merchantName" type="s:string" />
+    <wsdl:part name="merchantSiteId" type="s:string" />
+    <wsdl:part name="merchantKey" type="s:string" />
+    <wsdl:part name="invoiceNumber" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="customerCode" type="s:string" />
+    <wsdl:part name="poNumber" type="s:string" />
+    <wsdl:part name="taxAmount" type="s:string" />
+    <wsdl:part name="registerNumber" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="merchantTransactionId" type="s:string" />
+    <wsdl:part name="entryMode" type="s:string" />
+    <wsdl:part name="messageCorrelationID" type="s:string" />
+    <wsdl:part name="cardAcceptorTerminalID" type="s:string" />
+    <wsdl:part name="pinBlock" type="s:string" />
+    <wsdl:part name="pinKsn" type="s:string" />
+    <wsdl:part name="cashbackAmount" type="s:string" />
+    <wsdl:part name="donationAmount" type="s:string" />
+    <wsdl:part name="userTipAmount" type="s:string" />
+    <wsdl:part name="surchargeAmount" type="s:string" />
+    <wsdl:part name="kernelSoftwareVersion" type="s:string" />
+    <wsdl:part name="tlvData" type="s:string" />
+    <wsdl:part name="transactionType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EmvCompleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:EmvCompleteResponse4" />
+  </wsdl:message>
+  <wsdl:portType name="CreditSoap">
+    <wsdl:operation name="ApplyTip">
+      <wsdl:input message="tns:ApplyTipSoapIn" />
+      <wsdl:output message="tns:ApplyTipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CaptureSignatureTiff">
+      <wsdl:input message="tns:CaptureSignatureTiffSoapIn" />
+      <wsdl:output message="tns:CaptureSignatureTiffSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CaptureSignatureVector">
+      <wsdl:input message="tns:CaptureSignatureVectorSoapIn" />
+      <wsdl:output message="tns:CaptureSignatureVectorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DebitSale">
+      <wsdl:input message="tns:DebitSaleSoapIn" />
+      <wsdl:output message="tns:DebitSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ForceSale">
+      <wsdl:input message="tns:ForceSaleSoapIn" />
+      <wsdl:output message="tns:ForceSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Level2Sale">
+      <wsdl:input message="tns:Level2SaleSoapIn" />
+      <wsdl:output message="tns:Level2SaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Level2SaleKeyed">
+      <wsdl:input message="tns:Level2SaleKeyedSoapIn" />
+      <wsdl:output message="tns:Level2SaleKeyedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostAuthorization">
+      <wsdl:input message="tns:PostAuthorizationSoapIn" />
+      <wsdl:output message="tns:PostAuthorizationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PreAuthorization">
+      <wsdl:input message="tns:PreAuthorizationSoapIn" />
+      <wsdl:output message="tns:PreAuthorizationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PreAuthorizationKeyed">
+      <wsdl:input message="tns:PreAuthorizationKeyedSoapIn" />
+      <wsdl:output message="tns:PreAuthorizationKeyedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Refund">
+      <wsdl:input message="tns:RefundSoapIn" />
+      <wsdl:output message="tns:RefundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RepeatSale">
+      <wsdl:input message="tns:RepeatSaleSoapIn" />
+      <wsdl:output message="tns:RepeatSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sale">
+      <wsdl:input message="tns:SaleSoapIn" />
+      <wsdl:output message="tns:SaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaleKeyed">
+      <wsdl:input message="tns:SaleKeyedSoapIn" />
+      <wsdl:output message="tns:SaleKeyedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SettleBatch">
+      <wsdl:input message="tns:SettleBatchSoapIn" />
+      <wsdl:output message="tns:SettleBatchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VoidPreAuthorization">
+      <wsdl:input message="tns:VoidPreAuthorizationSoapIn" />
+      <wsdl:output message="tns:VoidPreAuthorizationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Void">
+      <wsdl:input message="tns:VoidSoapIn" />
+      <wsdl:output message="tns:VoidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Level2SaleVault">
+      <wsdl:input message="tns:Level2SaleVaultSoapIn" />
+      <wsdl:output message="tns:Level2SaleVaultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PreAuthorizationVault">
+      <wsdl:input message="tns:PreAuthorizationVaultSoapIn" />
+      <wsdl:output message="tns:PreAuthorizationVaultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaleVault">
+      <wsdl:input message="tns:SaleVaultSoapIn" />
+      <wsdl:output message="tns:SaleVaultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VaultBoardCredit">
+      <wsdl:input message="tns:VaultBoardCreditSoapIn" />
+      <wsdl:output message="tns:VaultBoardCreditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VaultBoardCreditKeyed">
+      <wsdl:input message="tns:VaultBoardCreditKeyedSoapIn" />
+      <wsdl:output message="tns:VaultBoardCreditKeyedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VaultBoardCreditByReference">
+      <wsdl:input message="tns:VaultBoardCreditByReferenceSoapIn" />
+      <wsdl:output message="tns:VaultBoardCreditByReferenceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VaultDeleteToken">
+      <wsdl:input message="tns:VaultDeleteTokenSoapIn" />
+      <wsdl:output message="tns:VaultDeleteTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VaultFindPaymentInfo">
+      <wsdl:input message="tns:VaultFindPaymentInfoSoapIn" />
+      <wsdl:output message="tns:VaultFindPaymentInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmvAuthorize">
+      <wsdl:input message="tns:EmvAuthorizeSoapIn" />
+      <wsdl:output message="tns:EmvAuthorizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmvComplete">
+      <wsdl:input message="tns:EmvCompleteSoapIn" />
+      <wsdl:output message="tns:EmvCompleteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CreditHttpPost">
+    <wsdl:operation name="ApplyTip">
+      <wsdl:input message="tns:ApplyTipHttpPostIn" />
+      <wsdl:output message="tns:ApplyTipHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CaptureSignatureTiff">
+      <wsdl:input message="tns:CaptureSignatureTiffHttpPostIn" />
+      <wsdl:output message="tns:CaptureSignatureTiffHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CaptureSignatureVector">
+      <wsdl:input message="tns:CaptureSignatureVectorHttpPostIn" />
+      <wsdl:output message="tns:CaptureSignatureVectorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DebitSale">
+      <wsdl:input message="tns:DebitSaleHttpPostIn" />
+      <wsdl:output message="tns:DebitSaleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ForceSale">
+      <wsdl:input message="tns:ForceSaleHttpPostIn" />
+      <wsdl:output message="tns:ForceSaleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Level2Sale">
+      <wsdl:input message="tns:Level2SaleHttpPostIn" />
+      <wsdl:output message="tns:Level2SaleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Level2SaleKeyed">
+      <wsdl:input message="tns:Level2SaleKeyedHttpPostIn" />
+      <wsdl:output message="tns:Level2SaleKeyedHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostAuthorization">
+      <wsdl:input message="tns:PostAuthorizationHttpPostIn" />
+      <wsdl:output message="tns:PostAuthorizationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PreAuthorization">
+      <wsdl:input message="tns:PreAuthorizationHttpPostIn" />
+      <wsdl:output message="tns:PreAuthorizationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PreAuthorizationKeyed">
+      <wsdl:input message="tns:PreAuthorizationKeyedHttpPostIn" />
+      <wsdl:output message="tns:PreAuthorizationKeyedHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Refund">
+      <wsdl:input message="tns:RefundHttpPostIn" />
+      <wsdl:output message="tns:RefundHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RepeatSale">
+      <wsdl:input message="tns:RepeatSaleHttpPostIn" />
+      <wsdl:output message="tns:RepeatSaleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sale">
+      <wsdl:input message="tns:SaleHttpPostIn" />
+      <wsdl:output message="tns:SaleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaleKeyed">
+      <wsdl:input message="tns:SaleKeyedHttpPostIn" />
+      <wsdl:output message="tns:SaleKeyedHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SettleBatch">
+      <wsdl:input message="tns:SettleBatchHttpPostIn" />
+      <wsdl:output message="tns:SettleBatchHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VoidPreAuthorization">
+      <wsdl:input message="tns:VoidPreAuthorizationHttpPostIn" />
+      <wsdl:output message="tns:VoidPreAuthorizationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Void">
+      <wsdl:input message="tns:VoidHttpPostIn" />
+      <wsdl:output message="tns:VoidHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Level2SaleVault">
+      <wsdl:input message="tns:Level2SaleVaultHttpPostIn" />
+      <wsdl:output message="tns:Level2SaleVaultHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PreAuthorizationVault">
+      <wsdl:input message="tns:PreAuthorizationVaultHttpPostIn" />
+      <wsdl:output message="tns:PreAuthorizationVaultHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaleVault">
+      <wsdl:input message="tns:SaleVaultHttpPostIn" />
+      <wsdl:output message="tns:SaleVaultHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VaultBoardCredit">
+      <wsdl:input message="tns:VaultBoardCreditHttpPostIn" />
+      <wsdl:output message="tns:VaultBoardCreditHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VaultBoardCreditKeyed">
+      <wsdl:input message="tns:VaultBoardCreditKeyedHttpPostIn" />
+      <wsdl:output message="tns:VaultBoardCreditKeyedHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VaultBoardCreditByReference">
+      <wsdl:input message="tns:VaultBoardCreditByReferenceHttpPostIn" />
+      <wsdl:output message="tns:VaultBoardCreditByReferenceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VaultDeleteToken">
+      <wsdl:input message="tns:VaultDeleteTokenHttpPostIn" />
+      <wsdl:output message="tns:VaultDeleteTokenHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VaultFindPaymentInfo">
+      <wsdl:input message="tns:VaultFindPaymentInfoHttpPostIn" />
+      <wsdl:output message="tns:VaultFindPaymentInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmvAuthorize">
+      <wsdl:input message="tns:EmvAuthorizeHttpPostIn" />
+      <wsdl:output message="tns:EmvAuthorizeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmvComplete">
+      <wsdl:input message="tns:EmvCompleteHttpPostIn" />
+      <wsdl:output message="tns:EmvCompleteHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CreditSoap" type="tns:CreditSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ApplyTip">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/ApplyTip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CaptureSignatureTiff">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/CaptureSignatureTiff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CaptureSignatureVector">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/CaptureSignatureVector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DebitSale">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/DebitSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForceSale">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/ForceSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Level2Sale">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/Level2Sale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Level2SaleKeyed">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/Level2SaleKeyed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostAuthorization">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/PostAuthorization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreAuthorization">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/PreAuthorization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreAuthorizationKeyed">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/PreAuthorizationKeyed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Refund">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/Refund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RepeatSale">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/RepeatSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sale">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/Sale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaleKeyed">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/SaleKeyed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SettleBatch">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/SettleBatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoidPreAuthorization">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/VoidPreAuthorization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Void">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/Void" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Level2SaleVault">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/Level2SaleVault" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreAuthorizationVault">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/PreAuthorizationVault" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaleVault">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/SaleVault" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VaultBoardCredit">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/VaultBoardCredit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VaultBoardCreditKeyed">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/VaultBoardCreditKeyed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VaultBoardCreditByReference">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/VaultBoardCreditByReference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VaultDeleteToken">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/VaultDeleteToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VaultFindPaymentInfo">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/VaultFindPaymentInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmvAuthorize">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/EmvAuthorize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmvComplete">
+      <soap:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/EmvComplete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CreditSoap12" type="tns:CreditSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ApplyTip">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/ApplyTip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CaptureSignatureTiff">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/CaptureSignatureTiff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CaptureSignatureVector">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/CaptureSignatureVector" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DebitSale">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/DebitSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForceSale">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/ForceSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Level2Sale">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/Level2Sale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Level2SaleKeyed">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/Level2SaleKeyed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostAuthorization">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/PostAuthorization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreAuthorization">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/PreAuthorization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreAuthorizationKeyed">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/PreAuthorizationKeyed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Refund">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/Refund" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RepeatSale">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/RepeatSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sale">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/Sale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaleKeyed">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/SaleKeyed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SettleBatch">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/SettleBatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoidPreAuthorization">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/VoidPreAuthorization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Void">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/Void" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Level2SaleVault">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/Level2SaleVault" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreAuthorizationVault">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/PreAuthorizationVault" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaleVault">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/SaleVault" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VaultBoardCredit">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/VaultBoardCredit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VaultBoardCreditKeyed">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/VaultBoardCreditKeyed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VaultBoardCreditByReference">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/VaultBoardCreditByReference" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VaultDeleteToken">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/VaultDeleteToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VaultFindPaymentInfo">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/VaultFindPaymentInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmvAuthorize">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/EmvAuthorize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmvComplete">
+      <soap12:operation soapAction="http://schemas.merchantwarehouse.com/merchantware/40/Credit/EmvComplete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CreditHttpPost" type="tns:CreditHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ApplyTip">
+      <http:operation location="/ApplyTip" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CaptureSignatureTiff">
+      <http:operation location="/CaptureSignatureTiff" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CaptureSignatureVector">
+      <http:operation location="/CaptureSignatureVector" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DebitSale">
+      <http:operation location="/DebitSale" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForceSale">
+      <http:operation location="/ForceSale" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Level2Sale">
+      <http:operation location="/Level2Sale" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Level2SaleKeyed">
+      <http:operation location="/Level2SaleKeyed" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostAuthorization">
+      <http:operation location="/PostAuthorization" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreAuthorization">
+      <http:operation location="/PreAuthorization" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreAuthorizationKeyed">
+      <http:operation location="/PreAuthorizationKeyed" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Refund">
+      <http:operation location="/Refund" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RepeatSale">
+      <http:operation location="/RepeatSale" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sale">
+      <http:operation location="/Sale" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaleKeyed">
+      <http:operation location="/SaleKeyed" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SettleBatch">
+      <http:operation location="/SettleBatch" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoidPreAuthorization">
+      <http:operation location="/VoidPreAuthorization" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Void">
+      <http:operation location="/Void" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Level2SaleVault">
+      <http:operation location="/Level2SaleVault" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreAuthorizationVault">
+      <http:operation location="/PreAuthorizationVault" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaleVault">
+      <http:operation location="/SaleVault" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VaultBoardCredit">
+      <http:operation location="/VaultBoardCredit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VaultBoardCreditKeyed">
+      <http:operation location="/VaultBoardCreditKeyed" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VaultBoardCreditByReference">
+      <http:operation location="/VaultBoardCreditByReference" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VaultDeleteToken">
+      <http:operation location="/VaultDeleteToken" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VaultFindPaymentInfo">
+      <http:operation location="/VaultFindPaymentInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmvAuthorize">
+      <http:operation location="/EmvAuthorize" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmvComplete">
+      <http:operation location="/EmvComplete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Credit">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provides payment, processing, and related services for both credit and debit cards.</wsdl:documentation>
+    <wsdl:port name="CreditSoap" binding="tns:CreditSoap">
+      <soap:address location="https://ps1.merchantware.net/Merchantware/ws/RetailTransaction/v4/Credit.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CreditSoap12" binding="tns:CreditSoap12">
+      <soap12:address location="https://ps1.merchantware.net/Merchantware/ws/RetailTransaction/v4/Credit.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CreditHttpPost" binding="tns:CreditHttpPost">
+      <http:address location="https://ps1.merchantware.net/Merchantware/ws/RetailTransaction/v4/Credit.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
