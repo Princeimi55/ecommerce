@@ -1,4 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="CayanCheckoutSample.CartPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" MasterPageFile="Site.Master" ClientIDMode="Static" Inherits="CayanCheckoutSample.CartPage" %>
+
+<asp:content ContentPlaceHolderID="ContentPlaceHolder1" runat="server" id="DefaultPage">
 
 <!DOCTYPE html>
 
@@ -117,3 +119,5 @@
         }
     </script>
 </html>
+
+</asp:content>

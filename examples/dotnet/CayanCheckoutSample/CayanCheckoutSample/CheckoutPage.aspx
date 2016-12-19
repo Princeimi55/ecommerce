@@ -1,5 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CheckoutPage.aspx.cs" Inherits="CayanCheckoutSample.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="Site.Master" CodeBehind="CheckoutPage.aspx.cs" ClientIDMode="Static" Inherits="CayanCheckoutSample.Default" %>
 
+<asp:content ContentPlaceHolderID="ContentPlaceHolder1" runat="server" id="CheckoutPage">
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,8 +46,8 @@
 				<div id="LoadingImage" class="form-loading" style="display:none;">
 					<img src="content/wait24.gif" />
 				</div>
-                <form id="PaymentForm" runat="server" class="form-horizontal">
-					<div class="form-group">
+                <form id="Form2" class="form-horizontal">
+                <div class="form-group">
 						<label for="CardHolder" id="CardholderLabel" class="control-label col-sm-3">Card Holder Name</label>
 						<div class="col-sm-9">
 							<input name="CardHolder" type="text" id="CardHolder" class="form-control" placeholder="Enter card holder name" data-cayan="cardholder" />
@@ -104,6 +106,8 @@
 							<input name="ZipCode" type="text" id="ZipCode" class="form-control" placeholder="Enter 5-digit zip-code" data-cayan="zipcode" />
 						</div>    
 					</div>
+                    </form>
+                <form id="PaymentForm" runat="server" class="form-horizontal">
 					<div class="form-actions">
                         <asp:Button ID="SubmitButton" Text="Complete Checkout" CssClass="btn btn-primary" OnClientClick="return false;" OnClick="SubmitButton_Click" UseSubmitBehavior="false" runat="server" />
 					</div>
@@ -138,7 +142,7 @@
         if (tokenResponse.token !== "") {
             tokenHolder.val(tokenResponse.token);
         }
-        __doPostBack("SubmitButton", "");
+        __doPostBack('ctl00$ContentPlaceHolder1$SubmitButton','');
     }
     // client-defined callback to handle error responses
     function HandleErrorResponse(errorResponses) {
@@ -159,3 +163,4 @@
     });
 </script>
 </html>
+</asp:content>
