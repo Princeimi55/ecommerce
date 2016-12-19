@@ -1,0 +1,8 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CayanCheckoutSample.Site" %>
+
+<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+    
+
+</asp:ContentPlaceHolder>
+
