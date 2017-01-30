@@ -10,7 +10,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="./content/cayan-style.css" rel="stylesheet">
         
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="https://ecommerce.merchantware.net/v1/CayanCheckout.js" type="text/javascript"></script>
 </head>
@@ -80,10 +80,10 @@
 						<div class="col-sm-5">
 							<select name="ExpirationYear" id="ExpirationYear" data-cayan="expirationyear" class="form-control">
 								<option value="15">2015</option>
-								<option selected="selected" value="16">2016</option>
+								<option value="16">2016</option>
 								<option value="17">2017</option>
 								<option value="18">2018</option>
-								<option value="19">2019</option>
+								<option selected="selected" value="19">2019</option>
 								<option value="20">2020</option>
 							</select>
 						</div>
